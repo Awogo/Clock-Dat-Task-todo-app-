@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+      <!-- Landing Page -->
+    <div id="landingPage" class="page active">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <h3 class="logo">⏱️ClockDat Task</h3>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#faq">FAQ</a>
+                    <button onclick="showLogin()">Login</button>
+                    <button class="btn-primary" onclick="showSignup()">Sign Up</button>
+                </div>
+            </div>  
+        </nav>
+    
+
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Organize Your Life Beautifully</h1>
+            <p>A simple and elegant todo list to keep you productive</p>
+            <div class="hero-buttons">
+                <button class="btn-large" onclick="showSignup()">Get Started Free</button>
+                <button class="btn-outline" onclick="showLogin()">Sign In</button>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section">
+            <h2>About ClockDat Task</h2>
+            <p>ClockDat Task is a beautiful and simple <strong>todo list app</strong> that helps you stay <strong>organized</strong>. 
+            Create tasks, mark them complete, and manage your daily <strong>activities</strong>with ease.</p>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section bg-light">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3>Is it free?</h3>
+                <p>Yes! ClockDat Task is completely free to use.</p>
+            </div>
+              <div class="faq-item">
+                <h3>How do I get started?</h3>
+                <p>Just click "Get Started Free" and create your account!</p>
+           </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Awogo Blessing- Made with 💖</p>
+        </footer>
+    </div>    
+
+
+ <!-- Todo Page -->
+    <div id="todoPage" class="page">
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="logo">⏱️ClockDat Task</h1>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </nav>
+
+        <div class="todo-container">
+            <h2>My Tasks</h2>
+            <!-- Add Task -->
+        <form id="todoForm" class="todo-form">
+              <input type="text" id="taskInput" placeholder="Task title..." required>
+
+              <textarea id="taskDesc" placeholder="Task description (optional)" rows="2"></textarea>
+
+              <input type="date" id="taskDate" required>
+               <input type="time" id="taskTime" required>
+  
+              <button type="submit" class="btn-primary">Add Task</button>
+         </form>
+
+            <!-- Task List -->
+            <div id="todoList" class="todo-list"></div>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-box">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>Welcome Back!</h2>
+            <form onsubmit="login(event)">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary btn-full">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-box">
+            <span class="close" onclick="closeSignup()">&times;</span>
+            <h2>⏱️ClockDat Task</h2>
+            <form onsubmit="signup(event)">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary btn-full">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+console.log("Landing:", document.getElementById("landingPage").className);
+console.log("Todo:", document.getElementById("todoPage").className);
+</script>
+
+</body>
+</html>

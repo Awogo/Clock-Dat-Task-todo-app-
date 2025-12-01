@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Page</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+  <!-- Todo Page -->
+    <div id="todoPage" class="page">
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="logo">ClockDat Task</h1>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </nav>
+
+        <div class="todo-container">
+            <h2>My Tasks</h2>
+            
+            <!-- Add Task -->
+            <form id="todoForm" class="todo-form">
+                <input type="text" id="taskInput" placeholder="Add a new task..." required>
+                <button type="submit" class="btn-primary">Add</button>
+            </form>
+
+            <!-- Task List -->
+            <div id="todoList" class="todo-list"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-box">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>Welcome Back!</h2>
+            <form onsubmit="login(event)">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary btn-full">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-box">
+            <span class="close" onclick="closeSignup()">&times;</span>
+            <h2>Join ClockDat Task</h2>
+            <form onsubmit="signup(event)">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary btn-full">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>  
+</body>
+</html>
